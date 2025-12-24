@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission - Oddbods Nursery, Daycare & Kindergarten</title>
+    <link href="remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #42A5F5;
+    --primary-orange: #FF9800;
+    --light-blue: #E3F2FD;
+    --light-orange: #FFF3E0;
+    --light-purple: #F3E5F5;
+    --text-dark: #2C2C2C;
+    --text-gray: #666666;
+    --bg-white: #FFFFFF;
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background: #FAFAFA;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 0.6rem 5%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    width: 38px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-orange);
+}
+
+.enroll-btn {
+    background: var(--primary-orange);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.enroll-btn:hover {
+    background: #F57C00;
+    color: white;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* Admission Form */
+.admission-form {
+    padding: 12px 100px;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 1.86rem;
+    margin-bottom: 0.2rem;
+    color: var(--text-dark);
+}
+
+.form-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+}
+
+.form-section {
+    background: var(--bg-white);
+    border-radius: 16px;
+    padding: 1.32rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.form-section.blue {
+    background: var(--light-blue);
+}
+
+.form-section.orange {
+    background: var(--light-orange);
+}
+
+.form-section.purple {
+    background: var(--light-purple);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    border-bottom: 3px solid var(--primary-orange);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.form-grid.single {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 0.75rem;
+}
+
+label .required {
+    color: #F44336;
+    margin-left: 0.2rem;
+}
+
+input,
+select,
+textarea {
+    padding: 0.9rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    transition: border-color 0.3s;
+    background: white;
+    width: 95%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.submit-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.submit-btn {
+    background: var(--primary-orange);
+    color: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.submit-btn:hover {
+    background: #F57C00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    background: #4CAF50;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-blue);
+    color: white;
+    padding: 3rem 5% 1.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+}
+
+.footer-about {
+    width: 100%;
+}
+
+.footer-about h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-about span {
+    font-size: 2rem;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-orange);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.social-icon:hover {
+    background: var(--primary-orange);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.79rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    /* Form inputs */
+    input, 
+    textarea, 
+    select {
+        font-size: 1rem;
+    }
+    
+    /* Admission form */
+    .admission-form {
+        padding: 12px;
+    }
+    
+    /* Header */
+    header {
+        height: 8.7vh;
+    }
+    
+    .nav-links {
+        display: flex;
+        transition: top 400ms linear;
+        width: 100vw;
+        height: 91vh;
+        position: fixed;
+        background: white;
+        padding-top: 30px;
+        top: -92vh;
+        left: 0;
+        flex-direction: column;
+        z-index: 120;
+    }
+    
+    .nav-links.see {
+        top: 8.7vh;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-about {
+        width: 100%;
+    }
+    
+    .footer-contact, 
+    .footer-links {
+        width: 100%;
+    }
+}</style>
+</head>
+<body>
+            <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/badge.jpg">
+                <div>
+                    <div style="font-size: 1.6rem; margin-bottom: -12px; margin-top:-6px;">ODDBODS</div>
+                    <div style="font-size: 0.7rem; font-weight: 500;">Nursery, Daycare & Kindergarten</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admission.html">Admission</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admission.html" class="enroll-btn">Enroll Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn ri-menu-line" onclick="bar()"></button>
+        </nav>
+    </header>
+
+    <!-- Admission Form -->
+    <section class="admission-form">
+        <div class="form-container">
+            <h2>Admission Application Form</h2>
+            <p class="form-subtitle">Please fill out all required fields marked with <span style="color: #F44336;">*</span></p>
+
+            <form id="admissionForm">
+                <!-- Child Information -->
+                <div class="form-section blue">
+                    <h3 class="section-title">Child Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="childName">Child's Full Name<span class="required">*</span></label>
+                            <input type="text" id="childName" name="childName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth<span class="required">*</span></label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age<span class="required">*</span></label>
+                            <input type="number" id="age" name="age" min="0" max="6" required>
+                        </div>
+                                                <div class="form-group">
+                            <label for="desiredProgram">Desired Program<span class="required">*</span></label>
+                            <select id="desiredProgram" name="desiredProgram" required>
+                                <option value="">Select Program</option>
+                                <option value="infant">Infant Care (6-18 months)</option>
+                                <option value="toddler">Toddler Program (18 months - 3 years)</option>
+                                <option value="nursery">Nursery (3-4 years)</option>
+                                <option value="kindergarten">Kindergarten (4-5 years)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gender<span class="required">*</span></label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" id="nationality" name="nationality">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent/Guardian 1 Information -->
+                <div class="form-section orange">
+                    <h3 class="section-title">Parent/Guardian 1 Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="parent1Name">Full Name<span class="required">*</span></label>
+                            <input type="text" id="parent1Name" name="parent1Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent1Relationship">Relationship to Child<span class="required">*</span></label>
+                            <select id="parent1Relationship" name="parent1Relationship" required>
+                                <option value="">Select Relationship</option>
+                                <option value="mother">Mother</option>
+                                <option value="father">Father</option>
+                                <option value="guardian">Guardian</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent1Phone">Phone Number<span class="required">*</span></label>
+                            <input type="tel" id="parent1Phone" name="parent1Phone" placeholder="+256 XXX XXX XXX" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="parent1Email">Email Address<span class="required">*</span></label>
+                            <input type="email" id="parent1Email" name="parent1Email" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="parent1Address">Home Address</label>
+                            <input type="text" id="parent1Address" name="parent1Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="parent1Occupation">Occupation</label>
+                            <input type="text" id="parent1Occupation" name="parent1Occupation">
+                        </div>
+                        <div class="form-group">
+                            <label for="parent1Workplace">Workplace</label>
+                            <input type="text" id="parent1Workplace" name="parent1Workplace">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent/Guardian 2 Information -->
+                <div class="form-section purple">
+                    <h3 class="section-title">Parent/Guardian 2 Information (Optional)</h3>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="parent2Name">Full Name</label>
+                            <input type="text" id="parent2Name" name="parent2Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="parent2Relationship">Relationship to Child</label>
+                            <select id="parent2Relationship" name="parent2Relationship">
+                                <option value="">Select Relationship</option>
+                                <option value="mother">Mother</option>
+                                <option value="father">Father</option>
+                                <option value="guardian">Guardian</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent2Phone">Phone Number</label>
+                            <input type="tel" id="parent2Phone" name="parent2Phone" placeholder="+256 XXX XXX XXX">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="parent2Email">Email Address</label>
+                            <input type="email" id="parent2Email" name="parent2Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="parent2Occupation">Occupation</label>
+                            <input type="text" id="parent2Occupation" name="parent2Occupation">
+                        </div>
+                        <div class="form-group">
+                            <label for="parent2Workplace">Workplace</label>
+                            <input type="text" id="parent2Workplace" name="parent2Workplace">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <h3 class="section-title">Additional Information</h3>
+                    <div class="form-grid single">
+                        <div class="form-group">
+                            <label for="howHeard">How did you hear about us?</label>
+                            <select id="howHeard" name="howHeard">
+                                <option value="">Select an option</option>
+                                <option value="google">Google Search</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="friend">Friend/Family Referral</option>
+                                <option value="driveby">Drove/Walked By</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="allergies">Does your child have any allergies, medical conditions, or special needs?</label>
+                            <textarea id="allergies" name="allergies" placeholder="Please provide details..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalComments">Additional Comments or Questions</label>
+                            <textarea id="additionalComments" name="additionalComments" placeholder="Any other information you'd like to share..."></textarea>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="scheduleTour" name="scheduleTour">
+                            <label for="scheduleTour" style="margin: 0;">I would like to schedule a tour of the facility</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent" style="margin: 0;">I confirm that all information provided is accurate<span class="required">*</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn">Submit Application →</button>
+                    <div class="success-message" id="successMessage">
+                        ✓ Thank you! Your application has been received. We'll contact you within 2 business days.
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <script>
+        // Form submission handler
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // In a real application, you would send this data to your server/email
+            console.log('Form Data:', data);
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            }, 3000);
+            
+            // Here you would typically send the data to your email service
+            // Example using EmailJS or similar service:
+            /*
+            emailjs.send('service_id', 'template_id', data)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+            */
+        });
+
+        // Auto-calculate age from date of birth
+        document.getElementById('dateOfBirth').addEventListener('change', function() {
+            const dob = new Date(this.value);
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const monthDiff = today.getMonth() - dob.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            
+            document.getElementById('age').value = age;
+        });
+
+        // Show/hide preferred days field based on enrollment type
+        document.getElementById('enrollmentType').addEventListener('change', function() {
+            const preferredDaysField = document.getElementById('preferredDays').parentElement;
+            if (this.value.includes('parttime')) {
+                preferredDaysField.style.display = 'flex';
+            } else {
+                preferredDaysField.style.display = 'none';
+                document.getElementById('preferredDays').value = '';
+            }
+        });
+    </script>
+                    <footer>
+        <div class="footer-content">
+          <div class="footer-about">
+                <h3><img width="65px" src="assets/badge.jpg" style="border-radius:5px; background: white; padding:5px"> Oddbods Education</h3>
+                <p>Exceptional early childhood care and education for children from 6 months to 5 years. Our center is designed to address diverse needs and learning styles, ensuring personalized attention and support for every child.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon ri-facebook-line"></a>
+                    <a href="#" class="social-icon ri-instagram-line"></a>
+                    <a href="#" class="social-icon ri-twitter-x-line"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Keep in Touch</h4>
+                <p><i class="ri-map-pin-line"></i> Makindye Lukuli, Kampala</p>
+                <p><i class="ri-phone-line"></i> +256 XXX XXX XXX</p>
+                <p><i class="ri-mail-line"></i> info@oddbods.ug</p>
+                <p><i class="ri-time-line"></i> Mon-Fri: 7AM - 6PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Oddbods Nursery, Daycare & Kindergarten. All rights reserved.</p>
+            <p><a href="tel: 256753943599" style="color:#fff">Developed and Maintained By Amanda Technologies</a></p>
+        </div>
+    <script>
+      function bar(){
+        document.querySelector(".nav-links").classList.toggle("see");
+        document.querySelector(".mobile-menu-btn").classList.toggle("ri-menu-line");
+        document.querySelector(".mobile-menu-btn").classList.toggle("ri-close-line");
+      }
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            allItems.forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            faqItem.classList.toggle('active');
+            toggle.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+    </script>
+    </footer>
+
+</body>
+</html>

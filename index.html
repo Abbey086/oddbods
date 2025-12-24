@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oddbods Nursery, Daycare & Kindergarten</title>
+    <link rel="stylesheet" href="remixicon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #42A5F5;
+            --primary-orange: #FF9800;
+            --light-blue: #E3F2FD;
+            --light-orange: #FFF3E0;
+            --text-dark: #2C2C2C;
+            --text-gray: #666666;
+            --bg-white: #FFFFFF;
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 0.6rem 5%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .logo img {
+            width: 38px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .enroll-btn {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .enroll-btn:hover {
+            background: #F57C00;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            min-height: 80vh;
+            width: 100vw;
+            align-items: center;
+        }
+
+        .hero-text {
+          width: 70vw;
+          padding-left: 25px;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .empowering {
+            color: var(--primary-orange);
+        }
+
+        .hero-text .vision {
+            color: var(--primary-blue);
+        }
+
+        .hero-text p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-btn {
+            background: var(--text-dark);
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+        }
+        .hero img{
+          width: 40vw;
+          height: auto;
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 50% 40% 60% 50%; }
+            25% { border-radius: 40% 60% 50% 60%; }
+            50% { border-radius: 60% 50% 40% 50%; }
+            75% { border-radius: 50% 60% 50% 40%; }
+        }
+
+
+        /* Programs Section */
+        .programs {
+            background: var(--light-blue);
+            padding: 5rem 5%;
+        }
+
+        .programs h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1rem;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .program-card:nth-child(1) {
+            background: var(--light-blue);
+        }
+
+        .program-card:nth-child(2) {
+            background: var(--light-orange);
+        }
+
+        .program-card:nth-child(3) {
+            background: #F3E5F5;
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .program-card .age {
+            color: var(--text-gray);
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-card p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.7rem;
+        }
+
+        .read-more {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: .8rem;
+        }
+
+        .read-more:hover {
+            color: #F57C00;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-choose h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-orange);
+        }
+
+        .feature-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .feature-content p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--light-orange);
+            padding: 5rem 5%;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--primary-orange);
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background: var(--light-blue);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-gray);
+            display: none;
+            font-size: .7rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            color: var(--primary-orange);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 5rem 5%;
+            background: linear-gradient(to bottom, white, var(--light-blue));
+        }
+
+        .map-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .map-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: var(--light-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 1rem;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .address {
+            margin-bottom: 1.5rem;
+        }
+
+        .address p {
+            color: var(--text-gray);
+            font-size: .9rem;
+            margin: 0.3rem 0;
+        }
+
+        .directions-btn {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .directions-btn:hover {
+            background: #F57C00;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3rem 5% 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-evenly;
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-about {
+          width: 50%;
+        }
+        .footer-about span {
+            font-size: 1rem;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.79rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+          header{
+            height: 8.7vh;
+          }
+            .nav-links {
+                display: flex;
+                transition: top 400ms linear;
+                width: 100vw;
+                height: 91vh;
+                position: fixed;
+                background: white;
+                padding-top: 30px;
+                top: -92vh;
+                left: 0;
+                flex-direction: column;
+                z-index: 120;
+            }
+            .nav-links.see{
+              top: 8.7vh;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+              flex-direction: column-reverse;
+                text-align: center;
+                justify-content: center;
+              gap: 12px;
+              
+            }
+            .hero-text{
+                padding-bottom: 20px;
+              width: 100%;
+              padding-left: 0;
+            }
+            .hero img{
+              width: 75.0vw;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+                margin-bottom: 3px;
+            }
+            .hero-text p{
+              margin-bottom: 8px;
+            }
+
+
+            .footer-content {
+              flex-direction: column;
+            }
+            .footer-about{
+              width: 100%;
+            }
+            .footer-contact, .footer-links{
+              width: 97%;
+              display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/badge.jpg">
+                <div>
+                    <div style="font-size: 1.6rem; margin-bottom: -12px; margin-top:-6px;">ODDBODS</div>
+                    <div style="font-size: 0.7rem; font-weight: 500;">Nursery, Daycare & Kindergarten</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admission.html">Admission</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admission.html" class="enroll-btn">Enroll Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn ri-menu-line" onclick="bar()"></button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>
+                <span class="empowering">Empowering</span><br>
+                students from small<br>
+                age <span class="vision">towards vision</span>
+            </h1>
+            <p>With courage, confidence, creativity, and compassion to make their unique contribution in a diverse and dynamic world.</p>
+            <a href="admission.html" class="hero-btn">Enroll Now</a>
+        </div>
+            <img src="assets/hero.png" alt="Happy child">
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <h2>Our Programs</h2>
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-icon">👶</div>
+                <h3>Infant Care</h3>
+                <p class="age">6-18 months</p>
+                <p>Gentle routines, sensory exploration, and responsive caregiving in a nurturing environment designed for your baby's first steps.</p>
+                <a href="programs.html" class="read-more">Learn More →</a>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">🧸</div>
+                <h3>Toddler & Nursery</h3>
+                <p class="age">18 months - 3 years</p>
+                <p>Language development, social skills, and creative play through age-appropriate activities that spark curiosity and growth.</p>
+                <a href="programs.html" class="read-more">Learn More →</a>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">🎓</div>
+                <h3>Kindergarten</h3>
+                <p class="age">3-5 years</p>
+                <p>School readiness, critical thinking, and confidence building through play-based learning aligned with early childhood standards.</p>
+                <a href="programs.html" class="read-more">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <h2>Why Choose Oddbods?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Qualified Educators</h4>
+                    <p>Professional teachers with early childhood certifications and genuine passion for child development</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Small Class Sizes</h4>
+                    <p>Low student-to-teacher ratios ensuring personalized attention for every child</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Play-Based Learning</h4>
+                    <p>Curriculum aligned with developmental milestones through engaging, hands-on activities</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Nutritious Meals</h4>
+                    <p>Healthy meals and snacks included, accommodating dietary needs and preferences</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Safe Environment</h4>
+                    <p>Secure, purpose-built facilities with outdoor play areas and strict safety protocols</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h4>Flexible Scheduling</h4>
+                    <p>Full-time and part-time options available to suit your family's needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What are your operating hours?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    We're open Monday to Friday, 7:00 AM to 6:00 PM, year-round except major holidays.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is your teacher-to-child ratio?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    We maintain ratios that exceed standards: Infants 1:4, Toddlers 1:6, Kindergarten 1:8.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do you provide meals?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we provide nutritious breakfast, lunch, and snacks daily. All meals accommodate dietary restrictions and preferences.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What curriculum do you follow?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    We use a child-centered, play-based approach that promotes emotional, social, physical, and cognitive development through structured and experiential learning.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I visit before enrolling?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! We encourage tours of our facility. Contact us to schedule a visit and meet our team.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do you offer part-time enrollment?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we offer both full-time (5 days) and part-time (2-3 days) options depending on availability.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <h2>Find Us</h2>
+        <div class="map-container">
+            <div class="map-placeholder">
+              <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=0.280576%2C32.593119&maptype=satellite&zoom=16" allowfullscreen></iframe>
+            </div>
+            <div class="address">
+                <p><strong>Oddbods Nursery, Daycare & Kindergarten</strong></p>
+                <p>Makindye Lukuli, Kampala</p>
+                <p>Uganda</p>
+            </div>
+            <a href="https://www.google.com/maps/@0.280576,32.593119,16z?utm_campaign=ml-ardl&g_ep=Eg1tbF8yMDI1MTIwOF8wIJvbDyoASAJQAQ%3D%3D" target="_blank" class="directions-btn">Get Directions →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+          <div class="footer-about">
+                <h3><img width="65px" src="assets/badge.jpg" style="border-radius:5px; background: white; padding:5px"> Oddbods Education</h3>
+                <p>Exceptional early childhood care and education for children from 6 months to 5 years. Our center is designed to address diverse needs and learning styles, ensuring personalized attention and support for every child.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon ri-facebook-line"></a>
+                    <a href="#" class="social-icon ri-instagram-line"></a>
+                    <a href="#" class="social-icon ri-twitter-x-line"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Keep in Touch</h4>
+                <p><i class="ri-map-pin-line"></i> Makindye Lukuli, Kampala</p>
+                <p><i class="ri-phone-line"></i> +256 XXX XXX XXX</p>
+                <p><i class="ri-mail-line"></i> info@oddbods.ug</p>
+                <p><i class="ri-time-line"></i> Mon-Fri: 7AM - 6PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Oddbods Nursery, Daycare & Kindergarten. All rights reserved.</p>
+            <p><a href="tel: 256753943599" style="color:#fff">Developed and Maintained By Amanda Technologies</a></p>
+        </div>
+    <script>
+      function bar(){
+        document.querySelector(".nav-links").classList.toggle("see");
+        document.querySelector(".mobile-menu-btn").classList.toggle("ri-menu-line");
+        document.querySelector(".mobile-menu-btn").classList.toggle("ri-close-line");
+      }
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            allItems.forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            faqItem.classList.toggle('active');
+            toggle.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+    </script>
+    </footer>
+
+</body>
+</html>

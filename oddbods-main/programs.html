@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Oddbods Nursery, Daycare & Kindergarten</title>
+    <link href="remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #42A5F5;
+            --primary-orange: #FF9800;
+            --light-blue: #E3F2FD;
+             --transition-fast: 0.2s ease;
+             --transition-normal: 0.3s ease;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --light-orange: #FFF3E0;
+            --light-purple: #F3E5F5;
+            --light-green: #E8F5E9;
+            --text-dark: #2C2C2C;
+            --text-gray: #666666;
+            --bg-white: #FFFFFF;
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: #FAFAFA;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+     /* Header */
+        header {
+            background: white;
+            padding: 0.6rem 5%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        /* ================================
+   HEADER & NAVIGATION (UPDATED)
+================================ */
+header {
+    height: 70px;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow var(--transition-normal);
+}
+
+nav {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+}
+
+.logo span {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 26px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 5px 0;
+    transition: color var(--transition-fast);
+}
+
+/* Hover underline animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-orange);
+    transition: width var(--transition-normal);
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--primary-orange);
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+    width: 100%;
+}
+
+/* Active page */
+.nav-links a[aria-current="page"] {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Enroll Button */
+.enroll-btn {
+    background: var(--primary-orange);
+    padding: 0.65rem 1.6rem;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--primary-orange);
+    transition: all var(--transition-normal);
+}
+
+.enroll-btn::after {
+    display: none;
+}
+
+.enroll-btn:hover {
+    background: #F57C00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,152,0,0.35);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* ================================
+   MOBILE NAVIGATION
+================================ */
+@media (max-width: 968px) {
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--bg-white);
+        flex-direction: column;
+        padding: 2.5rem 0;
+        gap: 1.5rem;
+        transition: top 0.4s ease;
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.active {
+        top: 70px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    .enroll-btn {
+        margin-top: 1rem;
+        display: inline-block;
+    }
+}
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3rem 5% 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-evenly;
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-about {
+          width: 50%;
+        }
+        .footer-about span {
+            font-size: 1rem;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.79rem;
+        }
+
+                        @media (max-width: 968px) {
+          header{
+            height: 8.7vh;
+          }
+            .nav-links {
+                display: flex;
+                transition: top 400ms linear;
+                width: 100vw;
+                height: 91vh;
+                position: fixed;
+                background: white;
+                padding-top: 30px;
+                top: -92vh;
+                left: 0;
+                flex-direction: column;
+                z-index: 120;
+            }
+            .nav-links.see{
+              top: 8.7vh;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            
+
+            .footer-content {
+              flex-direction: column;
+            }
+            .footer-about{
+              width: 100%;
+            }
+            .footer-contact, .footer-links{
+              width: 97%;
+              display: inline;
+            }
+        }
+
+
+        /* Hero Banner */
+        .hero-banner {
+            background: var(--primary-orange);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+      
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            margin-bottom: .4rem;
+        }
+
+        .hero-banner p {
+            font-size: .9rem;
+            opacity: 0.95;
+        }
+
+        /* Program Detail Section */
+        .program-detail {
+            padding: 2rem 5%;
+        }
+
+        .program-detail:nth-child(even) {
+            background: white;
+        }
+
+        .program-detail:nth-child(odd) {
+            background: #FAFAFA;
+        }
+
+        .program-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            position: relative;
+        }
+
+      
+
+        .program-content {
+            padding: 0 2rem;
+        }
+
+        .program-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .program-badge.blue {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+        }
+
+        .program-badge.orange {
+            background: var(--light-orange);
+            color: var(--primary-orange);
+        }
+
+        .program-badge.purple {
+            background: var(--light-purple);
+            color: #7E57C2;
+        }
+
+        .program-badge.green {
+            background: var(--light-green);
+            color: #4CAF50;
+        }
+
+        .program-content h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .age-range {
+            font-size: 1rem;
+            color: var(--primary-orange);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: .85rem;
+        }
+
+        .program-highlights {
+            background: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .program-highlights h4 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .program-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .program-highlights li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .program-highlights li::before {
+            content: '✓';
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .program-image {
+            position: absolute;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            height: 160px;
+            aspect-ratio: 16/9;
+            top: 0;
+            right: 10px;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .program-icon {
+            position: absolute;
+            right: 0px;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* Daily Schedule Section */
+        .schedule-section {
+            padding: 5rem 5%;
+            background: var(--light-orange);
+        }
+
+        .schedule-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .schedule-container h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .schedule-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 32px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            transform: translateX(100%);
+            background: var(--primary-blue);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            margin-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 1.5rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 4px solid white;
+            background: var(--primary-blue);
+            box-shadow: 0 0 0 3px var(--primary-blue);
+        }
+
+        .time-label {
+            font-weight: 600;
+            color: var(--primary-orange);
+            font-size: .7rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+            font-size: .9rem;
+        }
+
+        .activity-description {
+            color: var(--text-gray);
+            font-size: 0.75rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-blue);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--primary-orange);
+            opacity: 0.8;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+            font-size: 0.7rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .author-info h4 {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info .stars {
+            color: #FFB300;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: .85rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .9rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-banner h1 {
+                font-size: 2.2rem;
+            }
+
+            .program-container,
+            .program-container.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            .timeline-item{
+              margin-left: 3rem;
+            }
+            .timeline-item::before{
+              width: 10px;
+              height: 10px;
+            }
+            .timeline::before{
+              width: 2px;
+              left: 14px;
+            }
+            .timeline{
+              padding-left: 1rem;
+            }
+.program-highlights li{
+  font-size: .85rem;
+}
+            .program-image {
+                width: 90%;
+                position: relative;
+                top: 12px;
+                left: 20px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+        <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/badge.jpg">
+                <div>
+                    <div style="font-size: 1.6rem; margin-bottom: -12px; margin-top:-6px;">ODDBODS</div>
+                    <div style="font-size: 0.7rem; font-weight: 500;">Nursery, Daycare & Kindergarten</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admission.html">Admission</a></li>
+                <li><a href="dW.html">Director's Word</a></li>
+                <li><a href="admission.html" class="enroll-btn">Enroll Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn ri-menu-line" onclick="bar()"></button>
+        </nav>
+    </header>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Our Programs</h1>
+            <p>Tailored learning experiences for every stage of your child's early development</p>
+        </div>
+    </section>
+
+    <!-- Infant Care Program -->
+    <section class="program-detail">
+        <div class="program-container">
+            <div class="program-content">
+                <span class="program-badge blue">Ages 6-18 Months</span>
+                <h2>Infant Care</h2>
+                <p class="age-range">🍼 Gentle Beginnings</p>
+                <p>Our infant care program provides a safe, nurturing environment where your baby's earliest experiences are filled with warmth, comfort, and gentle exploration. We focus on building secure attachments and supporting your baby's natural development through responsive caregiving.</p>
+                <p>Each infant receives individualized attention with low ratios (1:4), ensuring their unique needs, schedules, and temperaments are honored. Our caring educators create a home-like atmosphere where babies feel loved and secure.</p>
+                
+                <div class="program-highlights">
+                    <h4>Program Highlights</h4>
+                    <ul>
+                        <li>Individualized care routines and flexible scheduling</li>
+                        <li>Sensory exploration with safe, age-appropriate materials</li>
+                        <li>Language-rich interactions through songs and conversation</li>
+                        <li>Gentle introduction to social play with peers</li>
+                        <li>Tummy time and movement activities for motor development</li>
+                        <li>Daily communication with parents about routines and milestones</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="program-image">
+                <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600" alt="Infant care">
+                <div class="program-icon">👶</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toddler Program -->
+    <section class="program-detail">
+        <div class="program-container reverse">
+            <div class="program-content">
+                <span class="program-badge orange">Ages 18 Months - 3 Years</span>
+                <h2>Toddler Program</h2>
+                <p class="age-range">🧸 Curious Explorers</p>
+                <p>Our toddler program celebrates this exciting age of discovery and independence. We provide a stimulating environment where toddlers can safely explore, experiment, and begin developing important social and self-help skills.</p>
+                <p>Through play-based learning and hands-on activities, toddlers develop language, fine and gross motor skills, and begin to understand their emotions and the world around them. Our patient, supportive educators guide children through this dynamic stage of growth.</p>
+                
+                <div class="program-highlights">
+                    <h4>Program Highlights</h4>
+                    <ul>
+                        <li>Language development through stories, songs, and conversations</li>
+                        <li>Independence-building through self-help skills (feeding, dressing)</li>
+                        <li>Early socialization and learning to share and take turns</li>
+                        <li>Creative play with art, music, and dramatic play</li>
+                        <li>Large motor skill development through active play</li>
+                        <li>Potty training support in partnership with families</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="program-image">
+                <img src="assets/swm.jpeg" alt="Toddler program">
+                <div class="program-icon">🧸</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nursery Program -->
+    <section class="program-detail">
+        <div class="program-container">
+            <div class="program-content">
+                <span class="program-badge purple">Ages 3-4 Years</span>
+                <h2>Nursery</h2>
+                <p class="age-range">🎨 Playful Learners</p>
+                <p>Our nursery program builds foundational skills through engaging, play-based learning. Children explore early literacy, numeracy, science, and creative arts while developing strong social-emotional skills and independence.</p>
+                <p>We create rich learning environments with hands-on centers that encourage exploration, problem-solving, and creativity. Children learn to work cooperatively, express themselves, and develop confidence in their abilities.</p>
+                
+                <div class="program-highlights">
+                    <h4>Program Highlights</h4>
+                    <ul>
+                        <li>Pre-literacy skills through storytelling and phonics activities</li>
+                        <li>Early math concepts with manipulatives and games</li>
+                        <li>Science discovery through nature exploration and experiments</li>
+                        <li>Creative arts including painting, crafts, music, and dance</li>
+                        <li>Social skills development through group activities and play</li>
+                        <li>Introduction to classroom routines and learning structures</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="program-image">
+                <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=600" alt="Nursery program">
+                <div class="program-icon">🎨</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kindergarten Program -->
+    <section class="program-detail">
+        <div class="program-container reverse">
+            <div class="program-content">
+                <span class="program-badge green">Ages 4-5 Years</span>
+                <h2>Kindergarten Prep</h2>
+                <p class="age-range">🎓 Confident Students</p>
+                <p>Our kindergarten program prepares children for primary school success through a balanced curriculum that emphasizes academic readiness, critical thinking, and strong character development. Children build confidence as capable, curious learners.</p>
+                <p>We focus on developing essential skills in literacy, numeracy, problem-solving, and collaboration while nurturing creativity and a love of learning. Our structured yet playful approach ensures children are academically, socially, and emotionally prepared for the next step.</p>
+                
+                <div class="program-highlights">
+                    <h4>Program Highlights</h4>
+                    <ul>
+                        <li>Early reading and writing with phonics and sight words</li>
+                        <li>Math skills including counting, patterns, and simple operations</li>
+                        <li>STEM activities promoting critical thinking and problem-solving</li>
+                        <li>Project-based learning on topics of interest</li>
+                        <li>Leadership skills and responsibility through classroom jobs</li>
+                        <li>Preparation for primary school routines and expectations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="program-image">
+                <img src="assets/img4.jpg" alt="Kindergarten program">
+                <div class="program-icon">🎓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Schedule Section -->
+    <section class="schedule-section">
+        <div class="schedule-container">
+            <h2>A Day in Our Program</h2>
+            <p class="schedule-subtitle">Every day is thoughtfully structured to balance learning, play, rest, and nutrition</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-label">7:00 - 9:00 AM</div>
+                    <div class="activity-name">Arrival & Free Play</div>
+                    <div class="activity-description">Warm welcome, breakfast, and child-directed play in learning centers</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-label">9:00 - 9:30 AM</div>
+                    <div class="activity-name">Circle Time</div>
+                    <div class="activity-description">Songs, calendar, weather, group discussion, and introduction to daily themes</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-label">9:30 - 11:00 AM</div>
+                    <div class="activity-name">Learning Centers</div>
+                    <div class="activity-description">Literacy, math, science, art stations with teacher-guided small group activities</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-label">11:00 - 11:45 AM</div>
+                    <div class="activity-name">Outdoor Play</div>
+                    <div class="activity-description">Active play, nature exploration, games, and gross motor development</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-label">11:45 AM - 12:30 PM</div>
+                    <div class="activity-name">Lunch Time</div>
+                    <div class="activity-description">Family-style dining, social skills practice, and healthy eating habits</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-label">12:30 - 2:30 PM</div>
+                    <div class="activity-name">Rest & Quiet Time</div>
+                    <div class="activity-description">Nap time for younger children, quiet activities and reading for older children</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-label">2:30 - 4:00 PM</div>
+                    <div class="activity-name">Afternoon Activities</div>
+                    <div class="activity-description">Music, movement, STEM projects, dramatic play, and creative exploration</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-label">4:00 - 6:00 PM</div>
+                    <div class="activity-name">Snack & Departure</div>
+                    <div class="activity-description">Afternoon snack, free play, outdoor time, and flexible pick-up</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2>What Parents Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Oddbods has been a blessing for our family. My daughter has grown so much in confidence and can't wait to go to school each day! The teachers truly care and it shows in every interaction.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah M.</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">The teachers truly care about each child. The communication is excellent and I always know what my son is learning. He's made wonderful friends and learned so much!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JT</div>
+                        <div class="author-info">
+                            <h4>James T.</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">We couldn't have asked for a better first school experience. The curriculum is engaging and our twins are thriving! Oddbods feels like family.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RF</div>
+                        <div class="author-info">
+                            <h4>The Rodriguez Family</h4>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Enroll Your Child?</h2>
+            <p>Give your child the gift of quality early education in a nurturing, stimulating environment</p>
+            <div class="cta-buttons">
+                <a href="admission.html" class="cta-button">Apply Now →</a>
+            </div>
+            </div>
+            </section>
+                <footer>
+        <div class="footer-content">
+          <div class="footer-about">
+                <h3><img width="65px" src="assets/badge.jpg" style="border-radius:5px; background: white; padding:5px"> Oddbods Education</h3>
+                <p>Exceptional early childhood care and education for children from 6 months to 5 years. Our center is designed to address diverse needs and learning styles, ensuring personalized attention and support for every child.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon ri-facebook-line"></a>
+                    <a href="#" class="social-icon ri-instagram-line"></a>
+                    <a href="#" class="social-icon ri-twitter-x-line"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Keep in Touch</h4>
+                <p><i class="ri-map-pin-line"></i> Makindye Lukuli, Kampala</p>
+                <p><i class="ri-phone-line"></i>  +256 772 436 179</p>
+                <p><i class="ri-mail-line"></i> info@oddbods.ug</p>
+                <p><i class="ri-time-line"></i> Mon-Fri: 7AM - 6PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Oddbods Nursery, Daycare & Kindergarten. All rights reserved.</p>
+            <p><a href="tel: 256753943599" style="color:#fff">Developed and Maintained By Amanda Technologies</a></p>
+        </div>
+    <script>
+      function bar(){
+        document.querySelector(".nav-links").classList.toggle("see");
+        document.querySelector(".mobile-menu-btn").classList.toggle("ri-menu-line");
+        document.querySelector(".mobile-menu-btn").classList.toggle("ri-close-line");
+      }
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            allItems.forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            faqItem.classList.toggle('active');
+            toggle.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+    </script>
+    </footer>
+<script>
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+
+            </body>
+            </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Oddbods Nursery, Daycare & Kindergarten</title>
+    <title>Contact Us - Oddbods Oddbods Junior, Kindergarten & Daycare Center</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="remixicon.css" rel="stylesheet">
     <style>
@@ -18,6 +18,9 @@
             --primary-orange: #FF9800;
             --light-blue: #E3F2FD;
             --light-orange: #FFF3E0;
+             --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
             --text-dark: #2C2C2C;
             --text-gray: #666666;
             --bg-white: #FFFFFF;
@@ -63,46 +66,173 @@
             background: #F57C00;
             color: white;
         }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        /* ================================
+   HEADER & NAVIGATION (UPDATED)
+================================ */
+header {
+    height: 70px;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow var(--transition-normal);
+}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
+nav {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .logo img {
-            width: 38px;
-        }
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1rem;
-            align-items: center;
-        }
+.logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+.logo span {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
 
-        .nav-links a:hover {
-            color: var(--primary-orange);
-        }
-        
-        /* Footer */
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 26px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 5px 0;
+    transition: color var(--transition-fast);
+}
+
+/* Hover underline animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-orange);
+    transition: width var(--transition-normal);
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--primary-orange);
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+    width: 100%;
+}
+
+/* Active page */
+.nav-links a[aria-current="page"] {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Enroll Button */
+.enroll-btn {
+    background: var(--primary-orange);
+    padding: 0.65rem 1.6rem;
+    border-radius: 25px;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--primary-orange);
+    transition: all var(--transition-normal);
+}
+
+.enroll-btn::after {
+    display: none;
+}
+
+.enroll-btn:hover {
+    background: orange;
+    color: #2C2C2C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,152,0,0.35);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* ================================
+   MOBILE NAVIGATION
+================================ */
+@media (max-width: 968px) {
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--bg-white);
+        flex-direction: column;
+        padding: 2.5rem 0;
+        gap: 1.5rem;
+        transition: top 0.4s ease;
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.active {
+        top: 70px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    .enroll-btn {
+        margin-top: 1rem;
+        display: inline-block;
+    }
+}
+  /* Footer */
         footer {
             background: var(--primary-blue);
             color: white;
@@ -574,15 +704,16 @@
                 <img src="assets/badge.jpg">
                 <div>
                     <div style="font-size: 1.6rem; margin-bottom: -12px; margin-top:-6px;">ODDBODS</div>
-                    <div style="font-size: 0.7rem; font-weight: 500;">Nursery, Daycare & Kindergarten</div>
+                    <div style="font-size: 0.7rem; font-weight: 500;">Junior, Kindergarten & Daycare Center</div>
                 </div>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="programs.html">Programs</a></li>
                 <li><a href="admission.html">Admission</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dW.html">Director's Word</a></li> 
                 <li><a href="admission.html" class="enroll-btn">Enroll Now</a></li>
             </ul>
             <button class="mobile-menu-btn ri-menu-line" onclick="bar()"></button>
@@ -616,7 +747,7 @@
                     <div class="info-icon ri-mail-line"></div>
                     <div class="info-content">
                         <h4>Email Address</h4>
-                        <p>info@oddbods.ug<br>admissions@oddbods.ug</p>
+                        <p>info@oddbodsschool.com<br>admissions@oddbodsschool.com</p>
                     </div>
                 </div>
 
@@ -756,14 +887,14 @@
             <div class="footer-contact">
                 <h4>Keep in Touch</h4>
                 <p><i class="ri-map-pin-line"></i> Makindye Lukuli, Kampala</p>
-                <p><i class="ri-phone-line"></i> +256 XXX XXX XXX</p>
-                <p><i class="ri-mail-line"></i> info@oddbods.ug</p>
+                <p><i class="ri-phone-line"></i>  +256 772 436 179</p>
+                <p><i class="ri-mail-line"></i> info@oddbodsschool.com</p>
                 <p><i class="ri-time-line"></i> Mon-Fri: 7AM - 6PM</p>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 Oddbods Nursery, Daycare & Kindergarten. All rights reserved.</p>
+            <p>&copy; 2025 Oddbods Oddbods Junior, Kindergarten & Daycare Center. All rights reserved.</p>
             <p><a href="tel: 256753943599" style="color:#fff">Developed and Maintained By Amanda Technologies</a></p>
         </div>
     <script>
@@ -789,6 +920,14 @@
         }
     </script>
     </footer>
+<script>
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>

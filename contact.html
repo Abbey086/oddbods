@@ -793,7 +793,7 @@ nav {
                     <div class="info-icon ri-mail-line"></div>
                     <div class="info-content">
                         <h4>Email Address</h4>
-                        <p>info@oddbodsschool.com<br>admissions@oddbodsschool.com</p>
+                        <p>info@oddbodsschool.com</p>
                     </div>
                 </div>
 
@@ -821,7 +821,10 @@ nav {
             <h3>Send Us a Message</h3>
             <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
 
-            <form id="contactForm">
+            <form id="contactForm" method="https://formsubmit.co/info@oddbodsschool.com" method="post">
+                <input type="hidden" name="_subject" value="New website contact submission!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://oddbodsschool.com/thanks">
                 <div class="form-grid">
                     <div class="full-width form-group" style="width: 100%">
                         <label for="name">Your Name<span class="required">*</span></label>

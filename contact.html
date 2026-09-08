@@ -86,7 +86,7 @@
 /* Header */
         header {
             background: white;
-            padding: 0.6rem 5%;
+            
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
@@ -870,48 +870,7 @@ nav {
         </div>
     </div>
 
-    <script>
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            
-            // In a real application, you would send this data to your server/email
-            console.log('Contact Form Data:', data);
-            
-            // Show success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.style.display = 'block';
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                this.reset();
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 3000);
-            }, 3000);
-            
-            // Here you would typically send the data to your email service
-            // Example using EmailJS or similar:
-            /*
-            emailjs.send('service_id', 'template_id', data)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                }, function(error) {
-                    console.log('FAILED...', error);
-                });
-            */
-        });
-    </script>
+     
                     <footer>
         <div class="footer-content">
           <div class="footer-about">
